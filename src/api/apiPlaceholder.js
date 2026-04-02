@@ -4,6 +4,8 @@ export const apiPlaceholder = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com',
   headers: {
     'Content-Type': 'application/json',
+    // si se pidiera usar api key en los headers:
+    // 'x-api-key': 'mi-api-key-que-me-dieron'
     // si se pidiera JSON Web Token (JWT)
     // 'Authorization': `Bearer ${localStorage.getItem('token')}`
   },

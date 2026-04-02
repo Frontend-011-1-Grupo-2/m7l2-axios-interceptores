@@ -31,13 +31,18 @@ const error = ref('')
 //   }
 // }
 
+// Accedemos a funcion onLoadingChange de axios para manejar estadod e carga
+apiPlaceholder.onLoadingChange = (loadingState) => {
+  isLoading.value = loadingState
+}
+
 const fetchPosts = async () => {
   try {
     const response = await apiPlaceholder.get('/posts')
     posts.value = response
-  } catch (error) {
-    console.error('Error al obtener los posts', error)
-    error.value = `Error al obtener los posts ${error}`
+  } catch (err) {
+    console.error('Error al obtener los posts', err)
+    error.value = `Error al obtener los posts ${err}`
   }
 }
 
